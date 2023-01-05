@@ -1,0 +1,121 @@
+.GeneralPage {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 100%;
+}
+
+.GeneralRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1.2rem;
+}
+
+.GeneralRow > div {
+  width: 100%;
+}
+
+.div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2.2em;
+  padding-bottom: 20px;
+}
+
+.right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.titleHeader {
+  font-family: "Poppins", sans-serif;
+  font-size: 3em;
+  font-weight: 500;
+  letter-spacing: 0.04ch;
+  line-height: 50px;
+  padding-bottom: 15px;
+}
+
+.headercontent {
+  font-family: "Poppins", sans-serif;
+  height: 43px;
+  width: fit-content;
+  background-color: #ffeee4;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  color:rgb(14, 146, 163);;
+  margin-bottom: 30px;
+}
+
+.pathAndFilter {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+/* Testtttttttttttttt */
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.selectFilter {
+  width: fit-content;
+  height: 43px;
+  border-radius: 5px;
+  box-shadow: none !important;
+  border: none  !important;
+  outline: none !important;
+  transition: all 0.3s ease-in-out;
+  /* font-size: 17px; */
+  /* padding: 5px 15px; */
+  background-color: #ffeee4;
+  color:rgb(14, 146, 163);;
+  cursor: pointer;
+}
+
+
+@media (max-width: 600px){
+  .headercontent{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .headercontent{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 300px) {
+  .headercontent{
+    font-size: 10px;
+  }
+
+  .GeneralRow {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    /* grid-gap: 0.8rem; */
+  }
+}
+
+@media screen and (max-width: 458px) {
+  .GeneralRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    grid-gap: 0.8rem;
+  }
+}

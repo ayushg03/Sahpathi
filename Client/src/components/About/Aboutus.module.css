@@ -1,0 +1,166 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  /* background: #3399ff; */
+  padding: 20px;
+  align-items: flex-start;
+}
+ul li {
+  /* background: #cce5ff;
+  color: darkblue; */
+  margin: 5px;
+  text-align: start;
+  display: list-item;
+}
+
+.titleHeader {
+  font-family: "Poppins", sans-serif;
+  font-size: 3em;
+  font-weight: 500;
+  letter-spacing: 0.04ch;
+  line-height: 50px;
+  padding-bottom: 15px;
+}
+
+.content {
+  height: fit-content;
+  margin-right: 50px;
+  font-size: 1.1em;
+  text-align: justify;
+}
+
+.link {
+  display: flex;
+}
+
+.iconStyle {
+  padding-right: 20px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.imagediv {
+  display: flex;
+  height: fit-content;
+  background-color: #ffeee4;
+  padding: 20px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  width: 300px;
+  height: 300px;
+  align-items: center;
+}
+
+.headerText {
+   text-align: start;
+  font-size: 1.9em;
+  font-weight: 600;
+  margin-top: 40px;
+  
+}
+
+.profileCards {
+  margin-top: 25px;
+  display: flex;
+  width: 310px;
+  border-radius: 5px;
+  margin-right: 5px;
+  justify-content: space-around;
+  padding: 15px;
+  align-items: center;
+  background-color: #ffeee4;
+}
+
+.profileImage {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+.profileName {
+  font-size: 1.5em;
+  font-weight: 500;
+  color:rgb(3, 3, 3);;
+}
+
+.CardRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 0;
+    grid-gap: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .content {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+  }
+
+  .img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .CardRow {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .profileCards {
+    width: 100%;
+  }
+
+  .imagediv {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+  }
+
+  .img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .imagediv {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .profileCards {
+    width: 100%;
+  }
+}

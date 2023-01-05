@@ -1,0 +1,38 @@
+[{
+
+    "branch":"CSE",
+    "semester":[{
+        "sem":"1",
+        "subject":[{
+        "sname":"RAC",
+        "files":[{
+            "id":"5645",
+            "title":"Shri Ram",
+            "label":"success",
+            "desc":"abc",
+            "author":"admin"
+
+        }]
+        }]
+    }]
+  
+},
+{
+    "branch":"CSE",
+    "semester":[{
+        "sem":"1",
+        "subject":[{
+        "sname":"RAC",
+        "files":[{
+            "id":"5645",
+            "title":"Shri Ram",
+            "label":"success",
+            "desc":"abc",
+            "author":"admin"
+
+        }]
+        }]
+    }]
+
+}
+]

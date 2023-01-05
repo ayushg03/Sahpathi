@@ -1,0 +1,164 @@
+.events {
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    /* line-height: 1.5; */
+    letter-spacing: 0.05em;
+  }
+  
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .contentHead3 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: 1px;
+    margin-right: 500px;
+  }
+  .timeline {
+    margin: 2em 0;
+    position: relative;
+    /* max-width: 46em; */
+  }
+  
+  .timeline:before {
+    background-color: black;
+    content: "";
+    margin-left: -1px;
+    position: absolute;
+    top: 0;
+    left: 2em;
+    width: 2px;
+    height: 100%;
+  }
+  
+  .timeline-event {
+    position: relative;
+  }
+  .timeline-event:hover .timeline-event-icon {
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-color:#01959a;
+  }
+  .timeline-event:hover .timeline-event-thumbnail {
+    -moz-box-shadow: inset 40em 0 0 0 #01959a;
+    -webkit-box-shadow: inset 40em 0 0 0 #01959a;
+    box-shadow: inset 40em 0 0 0 #01959a;
+  }
+  
+  .timing{
+  margin-top: 10px;
+  margin-bottom: 5px
+  }
+  
+  
+  
+  .timeline-event-copy {
+    padding: 2em;
+    position: relative;
+    top: -1.875em;
+    left: 4em;
+    width: 80%;
+  }
+  .link {
+    color: #01959a;
+  }
+  .timeline-event-copy .title {
+    font-size: 1.75em;
+    font-weight: 600;
+  }
+  .timeline-event-copy .by {
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+  }
+  .timeline-event-copy strong {
+    font-weight: 700;
+  }
+  .timeline-event-copy p:not(.timeline-event-thumbnail) {
+    padding-bottom: 1.2em;
+  }
+  
+  .timeline-event-icon {
+    -moz-transition: -moz-transform 0.2s ease-in;
+    -o-transition: -o-transform 0.2s ease-in;
+    -webkit-transition: -webkit-transform 0.2s ease-in;
+    transition: transform 0.2s ease-in;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: black;
+    outline: 10px solid white;
+    display: block;
+    margin: 0.5em 0.5em 0.5em -0.5em;
+    position: absolute;
+    top: 0;
+    left: 2em;
+    width: 1em;
+    height: 1em;
+  }
+  
+  .timeline-event-thumbnail {
+    -moz-transition: box-shadow 0.5s ease-in 0.1s;
+    -o-transition: box-shadow 0.5s ease-in 0.1s;
+    -webkit-transition: box-shadow 0.5s ease-in;
+    -webkit-transition-delay: 0.1s;
+    transition: box-shadow 0.5s ease-in 0.1s;
+    color: white;
+    font-size: 0.75em;
+    background-color: black;
+    -moz-box-shadow: inset 0 0 0 0em #01959a;
+    -webkit-box-shadow: inset 0 0 0 0em #01959a;
+    box-shadow: inset 0 0 0 0em #01959a;
+    display: inline-block;
+    margin-bottom: 1.2em;
+    padding: 0.25em 1em 0.2em 1em;
+  }
+  
+  @media (max-width: 600px) {
+    .timeline {
+      margin: 0em 0;
+      position: relative;
+    }
+  
+    .timeline-event-copy {
+      padding: 0em 0em;
+      position: relative;
+      top: -1.875em;
+      left: 0em;
+      margin: 0 auto;
+      width: 100%;
+    }
+  
+    .timeline-event-copy .title {
+      font-size: 1.5em;
+      line-height: 1em;
+    }
+    .timeline-event-copy .by {
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
+  
+    .timeline-event-icon {
+      display: none;
+    }
+  
+    .timeline:before {
+      display: none;
+      /* margin-left: -28px; */
+    }
+    .timeline-event-copy p:not(.timeline-event-thumbnail) {
+      padding-bottom: 0em;
+    }
+  
+    .apply{
+      margin-bottom: 60px;
+    }
+    
+  }
+  

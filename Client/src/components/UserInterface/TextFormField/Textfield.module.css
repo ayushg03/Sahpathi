@@ -1,0 +1,26 @@
+.input_container {
+  padding: 0;
+  height: 40px;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid #ced6e0;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 15px;
+  font-size: 15px;
+  margin: 0.5em 0;
+}
+.input_container:hover,
+:focus {
+  border-color: #1f1f1f;
+}
+.input_container:focus {
+  box-shadow: 0px 10px 20px -13px rgba(32, 56, 117, 0.45);
+}
+
+.label {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+}
