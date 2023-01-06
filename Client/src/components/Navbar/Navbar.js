@@ -20,7 +20,7 @@ const handleClick=()=>{
         <ul className={clicked?"nav-menu active":"nav-menu"}>
           {MenuItems.map((item,index)=>{
             return(
-              <li key={index}>
+              <li key={index} onClick={handleClick}>
               <Link className={item.cName} onClick={item.bt?props.onclick:()=>{}}
               to={item.url}>
               <i className={item.icon}></i>{item.title}</Link>

@@ -54,7 +54,10 @@
 @media screen and (max-width:850px) {
 .event{
     margin: 4rem 2rem;
-}   
+} 
+.event h1{
+    font-size: 2rem;
+}  
 .first-des{
     display: flex;
     flex-direction: column;

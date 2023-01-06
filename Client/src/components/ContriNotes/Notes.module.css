@@ -189,6 +189,9 @@ select:focus {
     font-size: 15px;
     /* color:rgb(14, 146, 163);; */
   }
+  .notes{
+    font-size: 25px ;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 900px) {

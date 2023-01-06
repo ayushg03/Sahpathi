@@ -61,7 +61,7 @@ img{
 @media screen and (max-width:555px) {
 .hero-text h1{
     background: linear-gradient(90deg, rgb(80, 203, 177) 0%, rgb(12, 100, 158) 100%);
-    font-size: 1.6rem;
+    font-size: 1.82rem;
     padding: 10px 20px;
 }    
 .hero-text p{

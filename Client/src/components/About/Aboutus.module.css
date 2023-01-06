@@ -28,7 +28,7 @@ ul li {
 .content {
   height: fit-content;
   margin-right: 50px;
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-align: justify;
 }
 
@@ -109,7 +109,7 @@ ul li {
   .content {
     margin: 0 auto;
     margin-top: 20px;
-    font-size: 0.85em;
+    font-size: 1em;
     margin-bottom: 10px;
   }
 
@@ -131,6 +131,9 @@ ul li {
 
   .imagediv {
     width: 100%;
+  }
+  .headerText {
+    font-size: 1.3em;
   }
 }
 

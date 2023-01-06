@@ -1,14 +1,11 @@
-
+import React from 'react'
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
-import Clubs from "../components/SocialContent/aboutclubs";
-
-function Social() {
+function Social1() {
   return (
     <div>
-   {/* <Navbar/> */}
-   <Hero 
+        <Hero 
    cName="hero-mid"
    ID="other"
    title="Social Space"
@@ -17,10 +14,10 @@ function Social() {
    url="/"
    btnClass="hide"
    />
-    <Clubs/>
     <Footer/>
    </div>
-  );
-}
+    
+  )
+  }
 
-export default Social;
+export default Social1

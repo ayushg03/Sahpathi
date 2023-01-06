@@ -28,7 +28,7 @@ let developerInfo = [
 const AboutUs = () => {
   return (
     <BasicLayout>
-      <div className={classes.row}>
+      <div >
         <div className={classes.content}>
         Welcome to Sahpathi, the socio-academic portal of RGIPT!<br/>
         At Sahpathi, we are dedicated to providing you with the resources and support you need to thrive in your studies and reach your full potential.
@@ -41,11 +41,11 @@ const AboutUs = () => {
           <br />
           <br />
           Thank you for choosing Sahpathi as your go-to source for academic support and information. 
-          We are committed to helping you succeed and reach your full potential.
+          We are committed to helping you succeed and reach your full potential.  
         </div>
-        <div className={classes.imagediv}>
+        {/* <div className={classes.imagediv}>
           <img className={classes.img} src={sahpathilogo} alt="" />
-        </div>
+        </div> */}
       </div>
 
       <div className={classes.headerText}>The Trailblazer leading the Charge</div>
@@ -58,7 +58,7 @@ const AboutUs = () => {
       </div>
       <div className={classes.headerText}>Release notes</div>
       <div >
-        <h1 className={classes.headerText}>January 2023</h1>
+        <h3 className={classes.headerText}>January 2023</h3>
         <ul >
           <li>Created branch & semester wise resources section.</li>
           <li>Option to contribute notes & other academic material.</li>
