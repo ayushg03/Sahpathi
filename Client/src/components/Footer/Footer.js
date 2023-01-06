@@ -37,6 +37,7 @@ const Footer = () => {
         <a href="/"><img src={owasp}/></a>
        </div>
       </div>
+     
     </div>
   );
 };

@@ -1,0 +1,229 @@
+
+.col {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .basicInput {
+    display: flex;
+    
+    flex-direction: column;
+    width: 60%;
+  
+    /* background-color:aqua; */
+  }
+  
+  .label {
+    display: flex;
+    text-align: left;
+   
+    flex-direction: column;
+  }
+  
+  .select {
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced6e0;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+    padding: 5px 15px;
+    background: none;
+    color: #000000;
+    margin: 0.5em 0;
+    padding-left: 50px;
+    cursor: pointer;
+  }
+  
+  /* .select::after {
+    content: "";
+    position: absolute;
+    right: 0.8em;
+    top: 0.9em;
+    border: 0.3em solid #3694d7;
+    border-color: #3694d7 transparent transparent transparent;
+    transition: 0.4s all ease-in-out;
+  } */
+  
+  select:hover,
+  select:focus {
+    border-color: #1f1f1f;
+  }
+  
+  select:focus {
+    box-shadow: 0px 10px 20px -13px rgba(32, 56, 117, 0.45);
+  }
+  
+  .drag_area {
+    max-height: fit-content;
+    max-width: 50%;
+    background-color: #ffeee4;
+    border-radius: 5px;
+    display: flex;
+    margin-left: 50px;
+    /* margin-top: 50px; */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .drag_area.active {
+    border: 2px solid #fff;
+  }
+  .drag_area .icon {
+    font-size: 100px;
+    color: #fff;
+  }
+  .drag_area header {
+    font-size: 20px;
+    color: rgb(14, 146, 163);
+  }
+  .drag_area span {
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(14, 146, 163);
+    /* margin: 10px 0 15px 0; */
+  }
+  .drag_area input {
+    /* padding: 10px 25px; */
+    font-size: 20px;
+    font-weight: 500;
+    /* margin-left: 250px; */
+    width: 60%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .drag_area .img {
+    height: fit-content;
+    width: fit-content;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .filechossen {
+    color: red;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  
+  .btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(14, 146, 163);
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    height: 45px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    margin-top: 10px;
+    box-shadow: 0px 6px 18px -5px rgb(237, 133, 85);
+  }
+  
+  /* .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 17px 20px -6px rgba(187, 195, 204, 0.36);
+  } */
+  
+  .cardbutton {
+    position: relative;
+    text-decoration: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    margin: 1em 0;
+    border-radius: 4px;
+    border-color: rgb(14, 146, 163);
+    box-shadow: 0px 4px 30px -6px rgba(36, 52, 70, 0.45);
+    background: rgb(14, 146, 163);
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .cardbutton:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
+  }
+  
+  .note {
+    color: rgb(104, 102, 102);
+    font-size: 0.9em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  .notes{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (max-width: 600px) {
+    .col {
+      flex-direction: column;
+      justify-content: space-around;
+      flex-direction: column-reverse;
+    }
+  
+    .drag_area {
+      margin-left: 0;
+      margin-bottom: 20px;
+      max-width: 100%;
+      height: fit-content;
+      padding: 20px;
+    }
+  
+    .basicInput {
+      width: 100%;
+    }
+  
+    .drag_area header {
+      font-size: 15px;
+      /* color:rgb(14, 146, 163);; */
+    }
+    .notes{
+      font-size: 25px ;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 900px) {
+    .col {
+      flex-direction: column;
+      justify-content: space-around;
+      flex-direction: column-reverse;
+    }
+  
+    .drag_area {
+      margin-left: 0;
+      margin-bottom: 20px;
+      max-width: 100%;
+      height: fit-content;
+      padding: 20px;
+    }
+  
+    .cardbutton:active {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      margin-top: 20px;
+      transform: scale(1.1);
+      box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
+    }
+  
+    .drag_area header {
+      font-size: 15px;
+      /* color:rgb(14, 146, 163);; */
+    }
+    .basicInput {
+      width: 100%;
+    }
+  }
+  

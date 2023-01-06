@@ -1,11 +1,14 @@
 import React from "react";
 import "./aboutclubs.css";
+import classes from "../About/Aboutus.module.css";
 import BasicLayout from "../UserInterface/BasicCompPadding/BasicLayout";
+import { Link } from "react-router-dom";
 
 // Display the information about the clubs
 const aboutdept = () => {
   return (
     <BasicLayout>
+      <h1>...</h1>
       <div className="blog-card">
         <div className="meta">
           <div className="photo"></div>
@@ -94,6 +97,16 @@ const aboutdept = () => {
           </p>
         </div>
       </div>
+      <h1>...</h1>
+      <div className={classes.row1}>
+      <div><h3 className={classes.headerText1}>Add more chapters or upcoming events.</h3>
+      </div>
+      <Link to="/social/add" className={classes.show}>Add now</Link>
+      </div>
+      <div>
+      <p className={classes.contact1}>*For Student Chapters/Clubs use only.</p>
+      </div>
+      
     </BasicLayout>
   );
 };
