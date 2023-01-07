@@ -96,8 +96,9 @@ router.post('/sem', upload.none(),async(req,res)=>{
         )
     }
     else{
-        const ncheck=await Semester.exists({subjects:{$elemMatch:{$eq:id}}}).exec();
+        const ncheck=await Semester.exists({$and:[{$and:[{sem:sem,branch:branch}]},{subjects:{$elemMatch:{$eq:id}}}]}).exec();
         console.log(ncheck);
+        console.log("i m here")
         if(!ncheck){
             await Semester.updateOne({$and:[{sem:sem,branch:branch}]},{$push:{subjects:id}});
             return res.json({
@@ -129,7 +130,7 @@ Semester.findOne({$and:[{branch:req.params.branch,sem:req.params.sem}]})
     res.json([])
     }
     else{
-        console.log('Success');
+        console.log(found);
         res.json(found.subjects.flatMap(s=>[s.subname]));
     }
 })
@@ -138,7 +139,8 @@ Semester.findOne({$and:[{branch:req.params.branch,sem:req.params.sem}]})
 router.get('/getNotes/:sub',async(req,res)=>{
 Subject.findOne({subname:req.params.sub})
 .populate({
-    path:'files'
+    path:'files',
+    match: {status:true}
 })
 .exec(function(err,found){
     if(err){

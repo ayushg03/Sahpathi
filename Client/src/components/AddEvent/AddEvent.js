@@ -10,14 +10,15 @@ import GeneralModal from "../GlobalComponents/GeneralModal/GeneralModal";
 // This class is used for uploading notes
 export class AddEvent extends Component {
     currentDate = new Date();
-    files = [];
+    file = {};
    
     state = {
       article: {
         title: "",
         desc: "",
         createDate: this.currentDate,
-        author: "",
+        author:"",
+        email: "",
         image: [],
         categoryLable: "",
         id: "",
@@ -28,43 +29,7 @@ export class AddEvent extends Component {
       loaderDisplay: false,
     };
   
-    // Uploads only Image to firebase to storage
-    // uploadImageCallBack = (e) => {
-    //   return new Promise(async (resolve, reject) => {
-    //     const file = e;
-    //     const filename = uuidv4();
-    //     this.storageRef
-    //       .ref()
-    //       .child("post/image/" + filename)
-    //       .put(file)
-    //       .then(async (snapshot) => {
-    //         const downloadURL = await this.storageRef
-    //           .ref()
-    //           .child("post/image/" + filename)
-    //           .getDownloadURL();
-    //         resolve({
-    //           success: true,
-    //           data: { link: downloadURL },
-    //         });
-    //       });
-    //   });
-    // };
-    // // Call uploadImageCallBack and returns a promise
-    // callbk = (e) => {
-    //   return new Promise(async (resolve, reject) => {
-    //     const uploadState = await this.uploadImageCallBack(e);
-    //     if (uploadState.success) {
-    //       this.setState({
-    //         hasFeatureIamge: true,
-    //         article: {
-    //           ...this.state.article,
-    //           image: [...this.state.article.image, uploadState.data.link],
-    //         },
-    //       });
-    //     }
-    //     resolve({ success: true });
-    //   });
-    // };
+
     // Used for validation of article
     handleValidation() {
       return new Promise(async (resolve, reject) => {
@@ -75,31 +40,77 @@ export class AddEvent extends Component {
           categoryLable,
           link,
           author,
+          email,
         } = this.state.article;
-        if (desc == "") {
-          return alert("Description is not valid");
-        } else if (title == "") {
-          return alert("Title is not valid");
-  
-          // this.setState({ error: "Title is not valid" });
-        } else if (categoryLable == "") {
-          return alert("CategoryLable is not valid");
-  
-          // this.setState({ error: "Category is not valid" });
-        } else if (author == "") {
-          return alert("Author is not valid");
-  
-          // this.setState({ error: "Author is not valid" });
-        } else {
+        if (title == "") {
+          Swal.fire({
+            icon: 'error',
+            // position: 'top',
+            title: 'Oops...',
+            text: 'Title is not valid',
+            showConfirmButton: false,
+            timer: 1200
+          })
+        }
+        else if (desc == "") {
+          Swal.fire({
+            icon: 'error',
+            // position: 'top',
+            title: 'Oops...',
+            text: 'Description is not valid',
+            showConfirmButton: false,
+            timer: 1200
+          })
+        } else if (email == "") {
+          Swal.fire({
+            icon: 'error',
+            // position: 'top',
+            title: 'Oops...',
+            text: 'Email is not valid',
+            showConfirmButton: false,
+            timer: 1200
+          })
+        }else if (author == "") {
+          Swal.fire({
+            icon: 'error',
+            // position: 'top',
+            title: 'Oops...',
+            text: 'Email is not valid',
+            showConfirmButton: false,
+            timer: 1200
+          })
+        } 
+        else if (categoryLable == "") {
+          Swal.fire({
+            icon: 'error',
+            // position: 'top',
+            title: 'Oops...',
+            text: 'Category is not valid',
+            showConfirmButton: false,
+            timer: 1200
+          })
+        }
+          else if (link == "") {
+            Swal.fire({
+              icon: 'error',
+              // position: 'top',
+              title: 'Oops...',
+              text: 'link is not valid',
+              showConfirmButton: false,
+              timer: 1200
+            })
+          } 
+          
+        else {
           this.setState({
             loaderDisplay: true,
           });
-          const len = this.files.length;
-          for (var i = 0; i < len; i++) {
-            const result = await this.callbk(this.files[i]);
-            // if (result.success) {
-            // }
-          }
+          // const len = this.files.length;
+          // for (var i = 0; i < len; i++) {
+          //   const result = await this.callbk(this.files[i]);
+          //   // if (result.success) {
+          //   // }
+          // }
   
         //   this.uploadPost();
         }
@@ -124,7 +135,7 @@ export class AddEvent extends Component {
     //           title: "",
     //           desc: "",
     //           createDate: this.currentDate,
-    //           author: "",
+    //           email: "",
     //           image: [],
     //           categoryLable: "",
     //           id: "",
@@ -139,14 +150,8 @@ export class AddEvent extends Component {
     // };
   
     // For mounting local file to website
-    fileAdded = (e) => {
-      var len = 0;
-      for (const f in e.target.files) {
-        if (e.target.files.hasOwnProperty(f)) len++;
-      }
-      for (var i = 0; i < len; i++) {
-        this.files = [...this.files, e.target.files[i]];
-      }
+    addFile = (e) => {
+      this.file = e.target.files[0];
       this.setState({});
     };
   
@@ -160,12 +165,12 @@ export class AddEvent extends Component {
       });
     };
   
-    //This function update the author if the user chages it
-    onChangeArticleAuthor = (value) => {
+    //This function update the email if the user chages it
+    onChangeArticleemail = (value) => {
       this.setState({
         article: {
           ...this.state.article,
-          author: value,
+          email: value,
         },
       });
     };
@@ -180,6 +185,15 @@ export class AddEvent extends Component {
       });
     };
   
+    onChangeArticleAuthor = (value) => {
+      this.setState({
+        article: {
+          ...this.state.article,
+          author: value,
+        },
+      });
+    };
+
     //This function update the link if the user chages it
     onChangeArticleLink = (value) => {
       this.setState({
@@ -204,19 +218,7 @@ export class AddEvent extends Component {
       this.index = 0;
       return (
         <BasicPadding>
-          {this.state.loaderDisplay ? (
-            <GeneralModal>
-              <BookLoader/>
-            </GeneralModal>
-          ) : (
-            <div></div>
-          )}
-  
-          {this.state.error !== "" ? (
-            <span style={{ color: "red" }}>{this.state.error}</span>
-          ) : (
-            ""
-          )}
+ 
           <h1 className={classes.notes}>Add Club/Chapter or Upcoming Event</h1>
           <div></div>
           <div className={classes.col}>
@@ -237,9 +239,14 @@ export class AddEvent extends Component {
                 title="Link"
               />
               <Textfield
-                value={this.state.article.author}
+                value={this.state.article.link}
                 onChange={(e) => this.onChangeArticleAuthor(e.target.value)}
-                title="Author(Chapter/Club Email-Id)"
+                title="Author"
+              />
+              <Textfield
+                value={this.state.article.email}
+                onChange={(e) => this.onChangeArticleemail(e.target.value)}
+                title="Chapter/Club Institute Email-Id"
               />
               <label className={classes.label}>Category</label>
               <select
@@ -265,22 +272,22 @@ export class AddEvent extends Component {
             <div className={classes.drag_area}>
               <header>Select Event Poster </header>
               <div style={{color: "grey"}}>1400x2000 px recommended</div>
-              <label for="fileImage" className={classes.btn}>
+              <label for="file" className={classes.btn}>
                 Choose Image
               </label>
               <input
                 className={classes.filechossen}
                 type="file"
-                id="fileImage"
+                id="file"
                 accept="image/x-png,image/gif,image/jpeg"
                 onChange={(e) => {
-                  this.fileAdded(e);
+                  this.addFile(e);
                 }}
               ></input>
   
-              {this.files.map((imageName) => {
-                return <div>{imageName.name}</div>;
-              })}
+             
+             <div>{this.file.name}</div>
+             
             </div>
           </div>
           <div className={classes.note}>

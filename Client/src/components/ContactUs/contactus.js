@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./contactus.css";
 import "../Layout/Layout"
+import Swal from 'sweetalert2'
+import axios from 'axios';
 import BasicLayout from "../UserInterface/BasicCompPadding/BasicLayout";
 
 // Contact us page
@@ -15,36 +17,54 @@ const ContactUs = () => {
 
   // review the validation and upload the message
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // if (name == "") {
-    //   setError("Name can't be null");
-    // } else if (email == "") {
-    //   setError("Email can't be null");
-    // } else if (message == "") {
-    //   setError("Message can't be null");
-    // } else {
-      // setLoader(true);
-      // db.collection("contacts")
-      //   .add({
-      //     name: name,
-      //     email: email,
-      //     message: message,
-      //   })
-      //   .then(() => {
-      //     setLoader(false);
-      //     alert("Your message has been submitted👍");
-      //   })
-      //   .catch((error) => {
-      //     alert(error.message);
-      //     setLoader(false);
-      //   });
+   
+    if (name == "") {
+      Swal.fire({
+        icon: 'error',
+        // position: 'top',
+        title: 'Oops...',
+        text: "Name can't be null",
+        showConfirmButton: false,
+        timer: 1200
+      })
+    }
+    else if (email == "") {
+      Swal.fire({
+        icon: 'error',
+        // position: 'top',
+        title: 'Oops...',
+        text: "Email can't be null",
+        showConfirmButton: false,
+        timer: 1200
+      })
+    }
+    else if (message == "") {
+      Swal.fire({
+        icon: 'error',
+        // position: 'top',
+        title: 'Oops...',
+        text: "Message can't be null",
+        showConfirmButton: false,
+        timer: 1200
+      })
+    }
+     else {
+      const subject="Thanks for contacting us!"
+      const reply="Thanks for contacting us! This auto-reply is just to let you know that we have received your email and will get back to you with a (human) response as soon as possible."
+      const fd = new FormData();
+      fd.append('to',email);
+      fd.append('subject',subject);
+      fd.append('message',message);
+      fd.append('reply',reply);
+      fd.append('name',name);
+      const response= axios.post(`/api/send`,fd);
+      console.log(response);
 
       // set all field null for next response(after uploading the first one)
-    //   setName("");
-    //   setEmail("");
-    //   setMessage("");
-    //   setError("");
-    // }
+      setName("");
+      setEmail("");
+      setMessage("");
+    }
   };
 
   return (
@@ -76,7 +96,6 @@ const ContactUs = () => {
           <button
           className="buttonStyle"
             type="submit"
-            // style={{ background: loader ? "#ccc" : " rgb(14, 146, 163);" }}
           >
             Submit
           </button>

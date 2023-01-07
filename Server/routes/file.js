@@ -50,7 +50,7 @@ const store = multer({
  });
 
  function checkFileType(file, cb) {
-   const filetypes = /pdf|doc|ppt|pptx/;
+   const filetypes = /jpg|jpeg|png/;
    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
    const mimetype = filetypes.test(file.mimetype);
    if (mimetype && extname) return cb(null, true);

@@ -125,6 +125,15 @@ uploadFile=()=>{
     fd1.append('files', this.file);
     const response0=await axios.post(`/api/upload`,fd1);
     console.log(response0);
+    const subject="Appreciating your support!"
+    const reply="We want to extend a heartfelt thank you for your contribution to our website. Your input will be invaluable and will help us to make our website a better resource for our users. We are grateful for your support and look forward for more future contributions."
+    const fd2 = new FormData();
+    fd2.append('to',this.state.article.author);
+    fd2.append('subject',subject);
+    fd2.append('message',this.state.article.title);
+    fd2.append('reply',reply);
+    fd2.append('name',this.state.article.desc);
+    const responseM= axios.post(`/api/send`,fd2);
     const fd = new FormData();
     fd.append('id',response0.data.id);
     fd.append('title',this.state.article.title);
@@ -167,7 +176,7 @@ uploadFile=()=>{
         showConfirmButton: false,
         timer: 1500
       })
-      
+      window.location.reload();
     })
     .catch((err) => console.log(err));
 
