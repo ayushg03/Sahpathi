@@ -35,13 +35,13 @@ const Book1 = (props) => {
                   
                 })
                 .then(() => {
-                    Swal.fire({
-                        icon: 'success',
-                        // position: 'top',
-                        title: 'Download Completed!',
-                        showConfirmButton: false,
-                        timer: 1200
-                      })
+                    // Swal.fire({
+                    //     icon: 'success',
+                    //     // position: 'top',
+                    //     title: 'Download Completed!',
+                    //     showConfirmButton: false,
+                    //     timer: 1200
+                    //   })
                   console.log("Completed");
                 });
         }}
