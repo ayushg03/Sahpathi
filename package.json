@@ -1,0 +1,21 @@
+{
+    "name": "sahpathi",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build": "cd Server && npm install  && cd ../Client && npm install && npm run build",
+      "start": "node Server/server.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/ayushg03/Sahpathi.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/ayushg03/Sahpathi/issues"
+    },
+    "homepage": "https://github.com/ayushg03/Sahpathi"
+  }
