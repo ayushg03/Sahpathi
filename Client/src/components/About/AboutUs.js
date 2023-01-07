@@ -18,7 +18,7 @@ let developerInfo = [
     name: "Ayush Gupta",
     image: ayush,
     social: [
-      "https://www.linkedin.com/in/ayushg03",
+      "https://twitter.com/AyushGu75343194",
       "https://www.linkedin.com/in/ayushg03",
       "https://github.com/ayushg03",
     ],

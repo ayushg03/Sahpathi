@@ -120,7 +120,7 @@ export class AddEvent extends Component {
       const response0 = await axios.post(`/api/files`, fd1);
       console.log(response0);
       const subject="Appreciating your support!"
-    const reply="Thank you for taking the time to post the details of your upcoming event on our website. It is greatly appreciated, as it helps to ensure that our members and interested parties are aware of the activities and opportunities available within the organization."
+    const reply="Thank you for taking the time to post the details of your upcoming event on our website. It is greatly appreciated, as it helps to ensure that our users and interested parties are aware of the activities and opportunities available within the campus."
     const fd2 = new FormData();
     fd2.append('to',this.state.article.email);
     fd2.append('subject',subject);

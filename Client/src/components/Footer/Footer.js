@@ -10,18 +10,18 @@ const Footer = () => {
         <p>The Socio-Academic Portal of RGIPT.</p>
       </div>
       <div>
-        <a href="/">
+        <a href="https://github.com/ayushg03">
           <i className="fa-brands fa-square-github">
 
           </i>
         </a>
-        <a href="/">
+        <a href="https://www.linkedin.com/in/ayushg03/">
         <i class="fa-brands fa-linkedin"></i>
         </a>
-        <a href="/">
+        <a href="https://stackoverflow.com/users/20746516/ayush">
         <i class="fa-brands fa-stack-overflow"></i>
         </a>
-        <a href="/">
+        <a href="https://twitter.com/AyushGu75343194">
         <i class="fa-brands fa-square-twitter"></i>
         </a>
       </div>

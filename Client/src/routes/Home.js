@@ -25,7 +25,7 @@ function Home(props){
    />
    
    <Events/>
-   <Card/>
+   {/* <Card/> */}
    <Footer/>
    </>
   );
