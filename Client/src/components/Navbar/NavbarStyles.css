@@ -59,6 +59,7 @@
     }
     .NavbarItems{
         z-index:99;
+        height: 60px;
     }
     .nav-menu{
         display: flex;
@@ -86,9 +87,9 @@
     .nav-links{
         display: block;
         width: 100%;
-        font-size: 1.2rem;
+        font-size: 1.0rem;
         text-align: center;
-        padding: 2rem 0;
+        padding: 1.2rem 0;
     }
     .nav-links:hover{
         background: #01959a;

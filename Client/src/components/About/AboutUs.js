@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BasicLayout from "../UserInterface/BasicCompPadding/BasicLayout";
 import classes from "./Aboutus.module.css";
 import "./Updates.css"
-import sahpathilogo from "../../assets/4.jpg";
+import sahpathilogo from "../../assets/44.jpg";
 import ayush from "../../assets/a.png"
 
 // import dev from "../../assets/Images/DevProfile.png";
