@@ -40,7 +40,7 @@ app.use('/api',require('./routes/events'));
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
-// const __dirname = path.resolve();
+const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '/Client/build')));
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/Client/build/index.html'))
