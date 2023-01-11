@@ -1,5 +1,6 @@
 import "./FooterStyles.css";
 import owasp from '../../assets/13.jpg';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -29,15 +30,15 @@ const Footer = () => {
       <div className="bottom">
        <div>
         <h4>Information</h4>
-        <a href="/">Privacy Policy</a>
-        <a href="/">Contact Us</a>
+        <Link to="/privacy">Privacy Policy</Link>
+        <a href="mailto:sahpathi03@gmail.com">Contact Us</a>
        </div>
        <div>
         <h4>Powered By</h4>
-        <a href="/"><img src={owasp}/></a>
+        <a href="https://owasp.org/www-chapter-rajiv-gandhi-institute-of-petroleum-technology/#"><img src={owasp}/></a>
        </div>
       </div>
-     
+     <div>© 2023 Sahpathi. All rights reserved.</div>
     </div>
   );
 };

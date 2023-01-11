@@ -7,6 +7,7 @@ import Events1 from "../components/Events/Events1";
 import Img from "../assets/12.jpg"
 import Card from "../components/GlobalComponents/Card";
 import { Button } from "react-scroll";
+import BasicLayout1 from "../components/UserInterface/BasicCompPadding/BasicLayout";
 
 function Home(props){
   return (
@@ -23,8 +24,9 @@ function Home(props){
    link={props.link}
    btnClass="show"
    />
-   
+
    <Events/>
+   
    {/* <Card/> */}
    <Footer/>
    </>

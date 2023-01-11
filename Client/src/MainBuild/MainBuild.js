@@ -9,6 +9,7 @@ import Contribute from "../routes/Contribute";
 import Subject from '../components/Academic/Subject';
 import Material from '../routes/Material';
 import ScrollToTop from '../Scroll';
+import Privacy from '../routes/Privacy';
 
 function MainBuild(props) {
   return (
@@ -27,6 +28,7 @@ function MainBuild(props) {
         <Route path={"/exams/:branch/:sem/:subject"} element={<Material/>}/>
        
         <Route path={"/social/add"} element={<Social1/>}/>
+        <Route path={"/privacy"} element={<Privacy/>}/>
       
         {/* </ScrollToTop> */}
     </Routes>
