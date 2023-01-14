@@ -11,7 +11,7 @@ const { application } = require("express");
 
 const upload = multer();
  
-const KEYFILEPATH = path.join(__dirname, "credentials.json");
+const KEYFILEPATH = path.join("../../etc/secrets", "credentials.json");
 const SCOPES = ["https://www.googleapis.com/auth/drive"];
  
 const auth = new google.auth.GoogleAuth({
