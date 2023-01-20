@@ -7,6 +7,9 @@ import axios from 'axios';
 
 var arrayy;
 
+
+
+
 // Used to display the subject cards
 class Subject extends Component {
   // used to initialize the arrayy var using the link of the page(using react router)
