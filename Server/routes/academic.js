@@ -5,7 +5,7 @@ const Subject=require('../models/subject');
 const Semester=require('../models/semester');
 const multer  = require('multer');
 const upload = multer()
-// connectDB();
+
 
 router.post('/notes', upload.none(),async(req,res)=>{
     const id=req.body.id;
