@@ -10,6 +10,9 @@ import Subject from '../components/Academic/Subject';
 import Material from '../routes/Material';
 import ScrollToTop from '../Scroll';
 import Privacy from '../routes/Privacy';
+import NewUploads from '../routes/NewUploads';
+import Projects from '../routes/Projects';
+import Project1 from '../routes/Project1';
 
 function MainBuild(props) {
   return (
@@ -21,13 +24,12 @@ function MainBuild(props) {
       <Route path="/about" element={ <About/>}/> 
       <Route path="/social" element={ <Social/>}/> 
       <Route path="/contribute" element={ <Contribute/>}/> 
-      <Route
-          path={"/exams/:branch/:sem"}
-          element={ <Exams/>}
-        />
+      <Route path={"/exams/:branch/:sem"} element={ <Exams/>} />
         <Route path={"/exams/:branch/:sem/:subject"} element={<Material/>}/>
-       
+        <Route path={"/newuploads"} element={<NewUploads/>}/>
+        <Route path={"/projects"} element={<Projects/>}/>
         <Route path={"/social/add"} element={<Social1/>}/>
+        <Route path={"/project/add"} element={<Project1/>}/>
         <Route path={"/privacy"} element={<Privacy/>}/>
       
         {/* </ScrollToTop> */}

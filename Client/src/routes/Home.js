@@ -23,6 +23,7 @@ function Home(props){
    url="/"
    link={props.link}
    btnClass="show"
+   btnClass1="show1"
    />
 
    <Events/>

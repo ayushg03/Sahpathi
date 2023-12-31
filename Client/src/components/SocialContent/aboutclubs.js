@@ -1,11 +1,34 @@
-import React from "react";
+
+import axios from 'axios';
 import "./aboutclubs.css";
 import classes from "../About/Aboutus.module.css";
 import BasicLayout from "../UserInterface/BasicCompPadding/BasicLayout";
 import { Link } from "react-router-dom";
 
+import { useEffect, useState } from "react";
+
 // Display the information about the clubs
-const aboutdept = () => {
+const Aboutdept = () => {
+
+  const [data,setData]=useState(null);
+
+  const getEvents = async () => {
+    try {
+      const response1 = await axios.get('/api/clubs');
+      setData(response1.data);
+
+      for (const club of response1.data) {
+        await axios.get(`/api/download/${club.id}`);
+      }
+    } catch (error) {
+      console.error('Error fetching events:', error);
+      // Handle error as needed
+    }
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, []);
   return (
     <BasicLayout>
       <h1>...</h1>
@@ -97,6 +120,26 @@ const aboutdept = () => {
           </p>
         </div>
       </div>
+     
+      {data && data.map((item, index) => (
+  <div className={index % 2 === 0 ? "blog-card" : "blog-card alt"} key={index}>
+    <div className="meta">
+      <div className="photo4" style={{ backgroundImage: `url("https://drive.google.com/uc?id=${item?.id}")` }}></div>
+    </div>
+    <div className="description">
+      <h1>
+        <b>{item.title}</b>
+      </h1>
+      <h2> ...  </h2>
+      <p>{item.desc}</p>
+      <p className="read-more">
+        <a target="_blank" href={item.link}>Read More</a>
+      </p>
+    </div>
+  </div>
+))}
+
+
       <h1>...</h1>
       <div className={classes.row1}>
       <div><h3 className={classes.headerText1}>Add more chapters or upcoming events.</h3>
@@ -111,4 +154,4 @@ const aboutdept = () => {
   );
 };
 
-export default aboutdept;
+export default Aboutdept;

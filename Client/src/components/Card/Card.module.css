@@ -11,6 +11,21 @@
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
+.Book1 {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+
+  background-color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 35px rgba(140, 152, 164, 0.18);
+}
 
 .cardImage {
   max-width: 100%;
@@ -69,7 +84,11 @@
     height: 100%;
     margin-bottom: 0px;
   }
-
+  .Book1 {
+    width: 80vw;
+    height: 100%;
+    margin-bottom: 0px;
+  }
   .titleText {
     font-size: 1.1em;
   }

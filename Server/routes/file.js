@@ -79,20 +79,20 @@ const store = multer({
     res.send({ success: false });
 });
 
- router.get('/:id', ({ params: { id } }, res) => {
-   // if no id return error
-   res.set({
-    "Accept-Ranges": "bytes",
-    "Content-Disposition": `attachment;`,
-    "Content-Type": "application/pdf"
-  });
-   const _id = new mongoose.Types.ObjectId(id);
-  gfs.find({ _id }).toArray((err, files) => {
-    if (!files || files.length === 0)
-      return res.status(400).send('no files exist');
-    gfs.openDownloadStream(_id).pipe(res);
-  });
- });
+//  router.get('/:id', ({ params: { id } }, res) => {
+//    // if no id return error
+//    res.set({
+//     "Accept-Ranges": "bytes",
+//     "Content-Disposition": `attachment;`,
+//     "Content-Type": "application/pdf"
+//   });
+//    const _id = new mongoose.Types.ObjectId(id);
+//   gfs.find({ _id }).toArray((err, files) => {
+//     if (!files || files.length === 0)
+//       return res.status(400).send('no files exist');
+//     gfs.openDownloadStream(_id).pipe(res);
+//   });
+//  });
 
 
 module.exports = router;

@@ -6,13 +6,7 @@ const upload = multer()
 // connectDB();
 
 router.post('/events', upload.none(),async(req,res)=>{
-    const id=req.body.id;
-    const title=req.body.title;
-    const link=req.body.link;
-    const email=req.body.email;
-    const category=req.body.category;
-    const author=req.body.author;
-    const desc=req.body.desc;
+    const { id, title, link, email, category, author, desc,date,timing } = req.body;
     await Event.create({
         id:id,
         link:link,
@@ -21,6 +15,8 @@ router.post('/events', upload.none(),async(req,res)=>{
         author:author,
         email:email,
         desc:desc,
+        date:date,
+        timing:timing,
     }, function (err, result){
         if(err) res.json({
             error:err,
@@ -30,5 +26,35 @@ router.post('/events', upload.none(),async(req,res)=>{
     )
 }
 );
+
+router.get('/event', async (req, res) => {
+    try {
+      
+      // Fetch two most recently updated events with status true
+      const recentEvents = await Event.find({
+        status: true,
+        category: { $in: ['Sports', 'Event'] }
+    }).limit(2);
+  
+      res.json(recentEvents);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+  router.get('/clubs', async (req, res) => {
+    try {
+      
+      // Fetch two most recently updated events with status true
+      const clubs = await Event.find({
+        status: true,
+        category: { $nin: ['Sports', 'Event'] }
+    });
+  
+      res.json(clubs);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
 
 module.exports=router;

@@ -14,7 +14,7 @@ const Book1 = (props) => {
     //  add the id to the path
     <Link
       style={{ textDecoration: "none", color: "black" }}
-      to={`/exams/${props.branch}/${props.sem}/${props.subject}`}
+      // to={`/exams/${props.branch}/${props.sem}/${props.subject}`}
     >
       <div
         className={classes.Book}

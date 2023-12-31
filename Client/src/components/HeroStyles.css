@@ -50,10 +50,20 @@ img{
     background: white;
     padding: 1rem 2rem;
     border-radius: 6px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: bold;
     letter-spacing: 2px;
     color: black;
+}
+.hero-text .show1{
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
 }
 .hero-text .hide{
     display: none;
@@ -71,6 +81,11 @@ img{
 .hero-text .show{
     padding: 0.6rem 1.1rem;
     font-size: 1rem;
+    border-radius: 6px;
+}
+.hero-text .show1{
+    padding: 0.6rem 1.1rem;
+    font-size: 0.8rem;
     border-radius: 6px;
 }
 .hero-text .hide{

@@ -43,7 +43,7 @@ const Events1 = (props) => {
         </div>
       </div>
       <div className="image">
-        <img alt="img" src={props.img1}/>
+        <img alt="img" src={props.img1} style={{objectFit: "fill"}}/>
         {/* <img alt="img" src={props.img2}/> */}
       </div>
     </div>

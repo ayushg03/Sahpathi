@@ -91,9 +91,7 @@ export class AddNotes extends Component {
 
 
   currentDate = new Date();
-  // db = firebase.firestore();
 
-  // storageRef = firebase.storage();
   constructor(props) {
     super(props);
     this.state = {
@@ -118,22 +116,27 @@ export class AddNotes extends Component {
     };
   }
 
-  //function to upload notes to gridfs
+  //function to upload notes
 uploadFile=()=>{
   return new Promise(async (resolve, reject) => {
-    const fd1 = new FormData();
-    fd1.append('files', this.file);
-    const response0=await axios.post(`/api/upload`,fd1);
+    // file upload to drive
+    const notes = new FormData();
+    notes.append('files', this.file);
+    const response0=await axios.post(`/api/upload`,notes);
     console.log(response0);
+
+    //Email the thank message to author
     const subject="Appreciating your support!"
     const reply="We want to extend a heartfelt thank you for your contribution to our website. Your input will be invaluable and will help us to make our website a better resource for our users. We are grateful for your support and look forward for more future contributions."
-    const fd2 = new FormData();
-    fd2.append('to',this.state.article.author);
-    fd2.append('subject',subject);
-    fd2.append('message',this.state.article.title);
-    fd2.append('reply',reply);
-    fd2.append('name',this.state.article.desc);
-    const responseM= axios.post(`/api/send`,fd2);
+    const email = new FormData();
+    email.append('to',this.state.article.author);
+    email.append('subject',subject);
+    email.append('message',this.state.article.title);
+    email.append('reply',reply);
+    email.append('name',this.state.article.desc);
+    const responseM= axios.post(`/api/send`,email);
+
+    //uploaded file id and other relevant details upload to subsequest tables
     const fd = new FormData();
     fd.append('id',response0.data.id);
     fd.append('title',this.state.article.title);
@@ -142,11 +145,11 @@ uploadFile=()=>{
     fd.append('fileName',response0.data.name);
     fd.append('size',response0.data.size);
     fd.append('label',this.state.article.categoryLable);
-    const response=await axios.post(`/api/notes`,fd);
-    console.log(response);
-    const response2=await axios.post(`/api/sub`,{subject:this.state.article.subject,id:response.data._id});
+    const response1=await axios.post(`/api/notes`,fd);
+    console.log(response1);
+    const response2=await axios.post(`/api/sub`,{subject:this.state.article.subject,id:response1.data._id});
     console.log(response2);
-    const response3=await axios.post(`/api/sem`,{semester:this.state.article.semester,branch:this.state.article.department,id:response2.data._id}).then((res)=>{
+    await axios.post(`/api/sem`,{semester:this.state.article.semester,branch:this.state.article.department,id:response2.data._id}).then((res)=>{
       this.file = "";
       this.setState({
         article: {

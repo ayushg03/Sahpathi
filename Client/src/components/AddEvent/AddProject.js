@@ -8,7 +8,7 @@ import BookLoader from "../GlobalComponents/Loader";
 import GeneralModal from "../GlobalComponents/GeneralModal/GeneralModal";
 
 // This class is used for uploading notes
-export class AddEvent extends Component {
+export class AddProject extends Component {
   currentDate = new Date();
   file = {};
 
@@ -78,17 +78,7 @@ export class AddEvent extends Component {
           icon: 'error',
           // position: 'top',
           title: 'Oops...',
-          text: 'Email is not valid',
-          showConfirmButton: false,
-          timer: 1200
-        })
-      }
-      else if (categoryLable == "") {
-        Swal.fire({
-          icon: 'error',
-          // position: 'top',
-          title: 'Oops...',
-          text: 'Category is not valid',
+          text: 'Author is not valid',
           showConfirmButton: false,
           timer: 1200
         })
@@ -118,35 +108,27 @@ export class AddEvent extends Component {
   //If article is valid this function will upload the post
   uploadPost = () => {
     return new Promise(async (resolve, reject) => {
-      const fd1 = new FormData();
-      fd1.append('file', this.file);
-      const response0 = await axios.post(`/api/upload`, fd1);
-      console.log(response0);
 
-      //email temp
-      const subject="Appreciating your support!"
-    const reply="Thank you for taking the time to post the details of your upcoming event on our website. It is greatly appreciated, as it helps to ensure that our users and interested parties are aware of the activities and opportunities available within the campus."
-    const fd2 = new FormData();
-    fd2.append('to',this.state.article.email);
-    fd2.append('subject',subject);
-    fd2.append('message',this.state.article.desc);
-    fd2.append('reply',reply);
-    fd2.append('name',this.state.article.author);
-    const responseM= axios.post(`/api/send`,fd2);
+    //   //email temp
+    //   const subject="Appreciating your support!"
+    // const reply="Thank you for taking the time to post the details of your project on our website. It is greatly appreciated, as it helps to ensure that our users and interested parties are aware of the activities and opportunities available within the campus."
+    // const fd2 = new FormData();
+    // fd2.append('to',this.state.article.email);
+    // fd2.append('subject',subject);
+    // fd2.append('message',this.state.article.desc);
+    // fd2.append('reply',reply);
+    // fd2.append('name',this.state.article.author);
+    // const responseM= axios.post(`/api/send`,fd2);
    
 
-    //next thing after upload image
+    //next thing 
       const fd = new FormData();
-      fd.append('id', response0.data.id);
       fd.append('link', this.state.article.link);
       fd.append('title', this.state.article.title);
       fd.append('desc', this.state.article.desc);
-      fd.append('author', this.state.article.author);
-      fd.append('category', this.state.article.categoryLable);
       fd.append('email', this.state.article.email);
-      fd.append('date',this.state.article.eventDate);
-      fd.append('timing',this.state.article.time);
-      const response = await axios.post(`/api/events`, fd).then(() => {
+      fd.append('author',this.state.article.author);
+      const response = await axios.post(`/api/projects`, fd).then(() => {
         this.file = "";
         this.setState({
           article: {
@@ -155,11 +137,7 @@ export class AddEvent extends Component {
             createDate: this.currentDate,
             author: "",
             email: "",
-            categoryLable: "",
-            id: "",
             link: "",
-            eventDate: "",
-            time: "",
           },
           error: "",
           loaderDisplay: false,
@@ -168,7 +146,6 @@ export class AddEvent extends Component {
           icon: 'success',
           // position: 'top',
           title: 'Thank You!',
-          text: 'Uploaded...Check your mail for further details.',
           showConfirmButton: false,
           timer: 2500
         })
@@ -234,22 +211,14 @@ export class AddEvent extends Component {
     });
   };
 
-  //This function update the category if the user chages it
-  onChangeArticlecategory = (value) => {
-    this.setState({
-      article: {
-        ...this.state.article,
-        categoryLable: value,
-      },
-    });
-  };
+
 
   render() {
     this.index = 0;
     return (
       <BasicPadding>
 
-        <h1 className={classes.notes}>Add Club/Chapter or Upcoming Event</h1>
+        <h1 className={classes.notes} style={{textAlign:"center"}}>Add your project details here</h1>
         <div></div>
         <div className={classes.col}>
           <div className={classes.basicInput}>
@@ -273,39 +242,12 @@ export class AddEvent extends Component {
               onChange={(e) => this.onChangeArticleAuthor(e.target.value)}
               title="Author"
             />
-            <Textfield
+             <Textfield
               value={this.state.article.email}
               onChange={(e) => this.onChangeArticleEmail(e.target.value)}
-              title="Chapter/Club Institute Email-Id"
+              title="Email-Id"
             />
-
-<Textfield
-  value={this.state.article.eventDate}
-  onChange={(e) => this.setState({ article: { ...this.state.article, eventDate: e.target.value } })}
-  title="Event Date"
-
-/>
-
-<Textfield
-  value={this.state.article.time}
-  onChange={(e) => this.setState({ article: { ...this.state.article, time: e.target.value } })}
-  title="Timings"
-/>
-
-
-            <label className={classes.label}>Category</label>
-            <select
-              className={classes.select}
-              onChange={(e) => this.onChangeArticlecategory(e.target.value)}
-              value={this.state.article.categoryLable}
-            >
-              <option value="" disabled selected>
-                Select
-              </option>
-              <option name="education">Student Chapter/Club</option>
-              <option name="education">Event</option>
-              <option name="education">Sports</option>
-            </select>
+           
             <button
               onClick={async (e) => await this.handleValidation(e)}
               className={classes.cardbutton}
@@ -314,36 +256,16 @@ export class AddEvent extends Component {
             </button>
           </div>
 
-          <div className={classes.drag_area}>
-            <header>Select Event Poster </header>
-            <div style={{ color: "grey" }}>1400x2000 px recommended</div>
-            <label for="file" className={classes.btn}>
-              Choose Image
-            </label>
-            <input
-              className={classes.filechossen}
-              type="file"
-              id="file"
-              accept="image/x-png,image/gif,image/jpeg"
-              onChange={(e) => {
-                this.addFile(e);
-              }}
-            ></input>
-
-
-            <div>{this.file.name}</div>
-
-          </div>
+          
         </div>
-        <div className={classes.note}>
+        <div className={classes.note} style={{textAlign:"center"}}>
           <div>
-            *Verification may take up few hours. Thank you for your patience. :)
+            *Projects will be uploaded once it is verified. Thank you for your patience! :)
           </div>
-          *Check your mail for what you posted.
         </div>
       </BasicPadding>
     );
   }
 }
 
-export default AddEvent;
+export default AddProject;

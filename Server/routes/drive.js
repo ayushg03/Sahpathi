@@ -11,7 +11,7 @@ const { application } = require("express");
 
 const upload = multer();
  
-const KEYFILEPATH = path.join("./", "credentials.json");
+const KEYFILEPATH = path.join(__dirname, "credentials.json");
 const SCOPES = ["https://www.googleapis.com/auth/drive"];
  
 const auth = new google.auth.GoogleAuth({
@@ -36,6 +36,7 @@ const uploadFile = async (fileObject) => {
       fields: "id,name,size",
     });
     console.log(`Uploaded file ${data.name} ${data.id}`);
+    
     return {
         id:data.id,
         size:data.size,
@@ -61,7 +62,7 @@ const uploadFile = async (fileObject) => {
         fileId: fileId,
         fields: 'webViewLink, webContentLink',
       });
-      console.log(result.data);
+ 
       return {
         view: result.data.webViewLink,
         download: result.data.webContentLink
@@ -80,6 +81,8 @@ router.post("/upload", upload.any(), async (req, res) => {
           arr=await uploadFile(files[f]);
         }
       res.json(arr);
+    
+
     } catch (f) {
       res.send(f.message);
     }

@@ -8,13 +8,7 @@ const upload = multer()
 
 
 router.post('/notes', upload.none(),async(req,res)=>{
-    const id=req.body.id;
-    const title=req.body.title;
-    const fileName=req.body.fileName;
-    const size=req.body.size;
-    const label=req.body.label;
-    const author=req.body.author;
-    const desc=req.body.desc;
+    const { id, title, fileName, size, label, author, desc } = req.body;
     const check=await File.exists({$and:[{fileName:fileName,size:size}]}).exec();
     if(!check){
     await File.create({
@@ -155,4 +149,23 @@ Subject.findOne({subname:req.params.sub})
     }
 })
 })
+
+// GET route to fetch recent uploads within the last 30 days
+router.get("/recentUploads", async (req, res) => {
+    try {
+      const currentDate = new Date();
+      const fifteenDaysAgo = new Date(currentDate - 30 * 24 * 60 * 60 * 1000); // Calculate 15 days ago
+  
+      const recentUploads = await File.find({
+        createdAt: { $gte: fifteenDaysAgo, $lte: currentDate },
+        status: true,
+      }).sort({ createdAt: -1 }); // Sort by descending order of creation date
+  
+      res.json(recentUploads);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+  
 module.exports=router;

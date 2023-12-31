@@ -30,6 +30,13 @@ export const MenuItems = [
     bt:false
   },
   {
+    title : "Projects",
+    url :"/projects",
+    cName:"nav-links",
+    icon:"fa-solid fa-code",
+    bt:false
+  },
+  {
     title : "Contribute",
     url :"/contribute",
     cName:"nav-links",
