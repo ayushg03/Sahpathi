@@ -40,7 +40,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div>© 2024 Sahpathi. All rights reserved. <br /> Made with ❤️ by Ayush Gupta</div>
+      <div>© 2024 Sahpathi. All rights reserved. <br /> Made with ❤️ by <u>Ayush Gupta</u></div>
     </div>
   );
 };
