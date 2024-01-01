@@ -21,4 +21,4 @@ jobs:
         chmod 600 keyfile
         mkdir -p ~/.ssh
         cp known_hosts ~/.ssh/known_hosts
-        ssh -t -i keyfile ubuntu@ec2-13-201-74-59.ap-south-1.compute.amazonaws.com "sudo bash ~/deploy.sh"
+        ssh -t -i keyfile ubuntu@ec2-3-110-90-49.ap-south-1.compute.amazonaws.com "sudo bash ~/deploy.sh"
