@@ -1,4 +1,4 @@
-# Sahpathi: Socio-Academic Portal of RGIPT
+# <div align="center">Sahpathi: Socio-Academic Portal of RGIPT</div>
 
 ![Sahpathi Logo](https://drive.google.com/uc?export=view&id=1CfuZjhKTijTvukPivq_xM0Eoh6HXAkTG)
 
@@ -70,8 +70,6 @@ Welcome to Sahpathi, the Socio-Academic Portal of Rajiv Gandhi Institute of Petr
 7. Write .env file in Server directory & replace all secrets.
 
 8. Write a Credentials.json file in routes folder with all google drive api secrets.
-   ```bash
-   npm start
 
 9. Run the Backend i.e. Server:
    ```bash
