@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "../Card/Card.module.css";
-import paperImg from "../../assets/card.jpg";
+// import paperImg from "../../assets/card.jpg";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 import axios from 'axios';
-var FileSaver = require('file-saver');
+// var FileSaver = require('file-saver');
 
 // Generate the card and display the content which is received from props
 const Book1 = (props) => {
@@ -53,7 +53,7 @@ const Book1 = (props) => {
           props.propp.match.url.split("/")[5] == "Books" ? (
           <img className={classes.cardImage} src={bookImg}></img>
         ) : ( */}
-          <img className={classes.cardImage} src="https://drive.google.com/uc?export=view&id=1ZOQclwUKbcHNQjqR3gR1V1_dG6NGXADv"></img>
+          <img className={classes.cardImage} src="https://drive.google.com/uc?export=view&id=1ZOQclwUKbcHNQjqR3gR1V1_dG6NGXADv" alt="img"></img>
         {/* )} */}
         <div className={classes.text}>
           <div className={classes.authorText}>{props.label}</div>

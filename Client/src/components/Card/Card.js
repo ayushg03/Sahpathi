@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "../Card/Card.module.css";
 // import image from "../../../assets/Images/image.png";
-import paperImg from "../../assets/card.jpg";
+// import paperImg from "../../assets/card.jpg";
 // import bookImg from "../../../assets/Images/books.png";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+// import axios from 'axios';
 
 // Generate the card and display the content which is received from props
 const Book = (props) => {
@@ -28,7 +28,7 @@ const Book = (props) => {
           props.propp.match.url.split("/")[5] == "Books" ? (
           <img className={classes.cardImage} src={bookImg}></img>
         ) : ( */}
-          <img className={classes.cardImage} src="https://drive.google.com/uc?export=view&id=1ZOQclwUKbcHNQjqR3gR1V1_dG6NGXADv"></img>
+          <img className={classes.cardImage} src="https://drive.google.com/uc?export=view&id=1ZOQclwUKbcHNQjqR3gR1V1_dG6NGXADv" alt="img"></img>
         {/* )} */}
         <div className={classes.text}>
           <div className={classes.authorText}>{props.author}</div>
