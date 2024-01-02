@@ -1,4 +1,4 @@
-# <div align="center">Sahpathi: Socio-Academic Portal of RGIPT</div>
+# <div align="center">Sahpathi: The Socio-Academic Portal of RGIPT</div>
 
 ![Sahpathi Logo](https://drive.google.com/uc?export=view&id=1CfuZjhKTijTvukPivq_xM0Eoh6HXAkTG)
 
