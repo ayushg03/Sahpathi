@@ -16,12 +16,18 @@ const CardP = (props) => {
   return (
     //  add the id to the path
     <>
-    <Link
-      style={{ textDecoration: "none", color: "black" }}
-
-    >
+    {/* <a
+  href={props.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ textDecoration: "none", color: "black" }}
+> */}
       <div
         className={classes.Book1}
+        onClick={() => {
+          window.open(props.link, '_blank', 'noopener noreferrer');
+        }
+      }
       >
         <div className={classes.text}>
         <div className={classes.titleText} >{props.title}</div>
@@ -37,7 +43,7 @@ const CardP = (props) => {
         </div>
       </div>
 
-    </Link>
+    {/* </a> */}
 
     
     </>

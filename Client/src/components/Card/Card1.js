@@ -53,7 +53,7 @@ const Book1 = (props) => {
           props.propp.match.url.split("/")[5] == "Books" ? (
           <img className={classes.cardImage} src={bookImg}></img>
         ) : ( */}
-          <img className={classes.cardImage} src={paperImg}></img>
+          <img className={classes.cardImage} src="https://drive.google.com/uc?export=view&id=1ZOQclwUKbcHNQjqR3gR1V1_dG6NGXADv"></img>
         {/* )} */}
         <div className={classes.text}>
           <div className={classes.authorText}>{props.label}</div>
