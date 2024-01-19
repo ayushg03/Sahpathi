@@ -37,7 +37,7 @@ const Events = () => {
     author={data?.[0]?.author ? data?.[0]?.author : "Chapter Name"}
     link={data?.[0]?.link ? data?.[0]?.link : '/'}
     time={data?.[0]?.timing ? data?.[0]?.timing : "Will be notified"}
-    img1={data?.[0]?.id ? `https://drive.google.com/uc?id=${data?.[0]?.id}` : Mountain1}
+    img1={data?.[0]?.id ? `https://drive.google.com/thumbnail?id=${data?.[0]?.id}` : Mountain1}
     img2={Mountain2}
     />
     {data?.[1]?.title && (
@@ -49,7 +49,7 @@ const Events = () => {
     author={data?.[1]?.author ? data?.[1]?.author : "Chapter Name"}
     link={data?.[1]?.link ? data?.[1]?.link : '/'}
     time={data?.[1]?.timing ? data?.[1]?.timing : "Will be notified"}
-    img1={data?.[1]?.id ? `https://drive.google.com/uc?id=${data?.[1]?.id}` : Mountain1}
+    img1={data?.[1]?.id ? `https://drive.google.com/thumbnail?id=${data?.[1]?.id}` : Mountain1}
     img2={Mountain2}
     />
     )}
