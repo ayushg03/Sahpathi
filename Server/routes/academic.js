@@ -32,6 +32,10 @@ else{
     console.log(check);
 }
 });
+
+
+
+
 router.post('/sub', upload.none(),async(req,res)=>{
     const subname=req.body.subject;
     const id= req.body.id;
@@ -167,5 +171,22 @@ router.get("/recentUploads", async (req, res) => {
       res.status(500).json({ message: "Internal Server Error" });
     }
   });
+
+
+// Router to validate the uploaded file by link
+router.get('/validate/:fileId', async (req, res) => {
+    try {
+      const fileId = req.params.fileId;
+  
+      // Update the boolean field to true
+      await File.findByIdAndUpdate(fileId, { status: true });
+  
+      res.status(200).json({ message: 'File validation successful.' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error during file validation.' });
+    }
+  });
+  
   
 module.exports=router;

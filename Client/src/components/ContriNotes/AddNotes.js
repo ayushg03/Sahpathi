@@ -125,16 +125,7 @@ uploadFile=()=>{
     const response0=await axios.post(`/api/upload`,notes);
     console.log(response0);
 
-    //Email the thank message to author
-    const subject="Appreciating your support!"
-    const reply="We want to extend a heartfelt thank you for your contribution to our website. Your input will be invaluable and will help us to make our website a better resource for our users. We are grateful for your support and look forward for more future contributions."
-    const email = new FormData();
-    email.append('to',this.state.article.author);
-    email.append('subject',subject);
-    email.append('message',this.state.article.title);
-    email.append('reply',reply);
-    email.append('name',this.state.article.desc);
-    const responseM= axios.post(`/api/send`,email);
+
 
     //uploaded file id and other relevant details upload to subsequest tables
     const fd = new FormData();
@@ -147,6 +138,22 @@ uploadFile=()=>{
     fd.append('label',this.state.article.categoryLable);
     const response1=await axios.post(`/api/notes`,fd);
     console.log(response1);
+
+
+        //Email the thank message to author
+        const subject="Appreciating your support!"
+        const reply="We want to extend a heartfelt thank you for your contribution to our website. Your input will be invaluable and will help us to make our website a better resource for our users. We are grateful for your support and look forward for more future contributions."
+        const email = new FormData();
+        email.append('to',this.state.article.author);
+        email.append('subject',subject);
+        email.append('message',this.state.article.title);
+        email.append('reply',reply);
+        email.append('name',this.state.article.desc);
+        email.append('fileId',response1.data._id);
+        email.append('viewId',response0.data.id);
+        const responseM= axios.post(`/api/send`,email);
+
+
     const response2=await axios.post(`/api/sub`,{subject:this.state.article.subject,id:response1.data._id});
     console.log(response2);
     await axios.post(`/api/sem`,{semester:this.state.article.semester,branch:this.state.article.department,id:response2.data._id}).then((res)=>{
