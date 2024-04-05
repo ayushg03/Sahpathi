@@ -7,8 +7,9 @@ import SocialLink from "../GlobalComponents/LinkComponent/Linkcomponent";
 
 // Display info of developers
 const DevCard = (props) => {
+  console.log(props.varr.key);
   return (
-    <div className={classes.profileCards}>
+    <div className={props.varr.key===0?classes.profileCards:classes.profileCards1}>
       <div>
         <img className={classes.profileImage} src={props.varr.image} alt="" />
       </div>

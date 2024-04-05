@@ -11,7 +11,7 @@ const Footer = () => {
           <p>The Socio-Academic Portal of RGIPT.</p>
         </div>
         <div>
-          <a href="https://github.com/ayushg03">
+          {/* <a href="https://github.com/ayushg03">
             <i className="fa-brands fa-square-github">
 
             </i>
@@ -24,7 +24,7 @@ const Footer = () => {
           </a>
           <a href="https://twitter.com/AyushGu75343194">
             <i class="fa-brands fa-square-twitter"></i>
-          </a>
+          </a> */}
         </div>
       </div>
       <div className="bottom">
@@ -40,7 +40,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div>© 2024 Sahpathi. All rights reserved. <br /> Made with ❤️ by <u>Ayush Gupta</u></div>
+      <div>© 2024 Sahpathi. All rights reserved.</div>
     </div>
   );
 };

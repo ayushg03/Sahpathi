@@ -4,7 +4,7 @@ import classes from "./Aboutus.module.css";
 import "./Updates.css"
 import sahpathilogo from "../../assets/44.jpg";
 import ayush from "../../assets/a.png"
-
+import shardy from "../../assets/shardy.png"
 // import dev from "../../assets/Images/DevProfile.png";
 import DevCard from "./DevCard";
 import ContactUs from "../ContactUs/contactus";
@@ -17,10 +17,21 @@ let developerInfo = [
   {
     name: "Ayush Gupta",
     image: ayush,
+    key: 0,
     social: [
-      "https://twitter.com/AyushGu75343194",
+      "https://twitter.com/4yushGupta",
       "https://www.linkedin.com/in/ayushg03",
       "https://github.com/ayushg03",
+    ],
+  },
+  {
+    name: "Shardendu Chaubey",
+    image: shardy,
+    key: 1,
+    social: [
+      "https://twitter.com",
+      "https://www.linkedin.com/in/sschaubey",
+      "https://github.com/Shardy30",
     ],
   },
 
@@ -60,7 +71,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className={classes.headerText}>The Trailblazer leading the Charge</div>
+      <div className={classes.headerText}>The Trailblazers leading the Charge</div>
 
       {/* Map all developerInfo object's data to DevCard component to display data */}
       <div className={classes.CardRow}>
