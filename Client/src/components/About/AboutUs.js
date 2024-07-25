@@ -29,7 +29,7 @@ let developerInfo = [
     image: shardy,
     key: 1,
     social: [
-      "https://twitter.com",
+      "https://twitter.com/Shardendu30",
       "https://www.linkedin.com/in/sschaubey",
       "https://github.com/Shardy30",
     ],
