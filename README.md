@@ -41,7 +41,7 @@ Welcome to Sahpathi, the Socio-Academic Portal of Rajiv Gandhi Institute of Petr
   - A Continuous Integration/Continuous Deployment (CI/CD) pipeline is implemented using `.github/workflows` for automated testing and deployment.
 
 
-## Installation
+## Installation Guide
 
 1. Clone the repository:
    ```bash
