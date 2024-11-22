@@ -2,7 +2,7 @@
 
 ![Sahpathi Logo](https://drive.google.com/uc?export=view&id=1CfuZjhKTijTvukPivq_xM0Eoh6HXAkTG)
 
-Welcome to Sahpathi, the Socio-Academic Portal of Rajiv Gandhi Institute of Petroleum Technology (RGIPT). This platform is designed to seamlessly integrate academic resources and social interactions for the RGIPT community.
+Welcome to Sahpathi, the Socio-Academic Portal of Rajiv Gandhi Institute of Petroleum Technology (RGIPT), Jais. This platform is designed to seamlessly integrate academic resources and social interactions for the RGIPT community.
 
 ## Features
 
